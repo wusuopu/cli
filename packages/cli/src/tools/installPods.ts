@@ -58,9 +58,11 @@ async function promptCocoaPodsInstallationQuestion(): Promise<
   const installWithGem = 'Yes, with gem (may require sudo)';
   const installWithHomebrew = 'Yes, with Homebrew';
 
-  const {shouldInstallCocoaPods} = await enquirer.prompt([
+  const {shouldInstallCocoaPods} = await enquirer.prompt<{
+    shouldInstallCocoaPods: string;
+  }>([
     {
-      type: 'list',
+      type: 'select',
       name: 'shouldInstallCocoaPods',
       message: promptQuestion,
       choices: [installWithGem, installWithHomebrew],

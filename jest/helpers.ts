@@ -189,7 +189,7 @@ function handleTestFailure(
 ) {
   if (!options.expectedFailure && result.code !== 0) {
     console.log(`Running ${cmd} command failed for unexpected reason. Here's more info:
-${chalk.bold('cmd:')}     ${cmd}    
+${chalk.bold('cmd:')}     ${cmd}
 ${chalk.bold('options:')} ${JSON.stringify(options)}
 ${chalk.bold('args:')}    ${(args || []).join(' ')}
 ${chalk.bold('stderr:')}  ${result.stderr}
